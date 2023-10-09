@@ -143,19 +143,18 @@ public class Prueba {
         Datos dato6 = new Datos("3. Slice 3 ",false,"");
         Datos dato7 = new Datos("4. Salir ",false,"");
         Datos datoi = new Datos("Ingrese opcion: ",true,"opcion");
+        /*Siguiente Uri*/
+        Uri uriSiguiente = new Uri("/menu/editar/","GET");
+        Datos datoSiguiente = new Datos("",false,"",uriSiguiente );
         /**/
-        datosD.add(dato);
-        datosD.add(dato2);
-        datosD.add(dato3);
-        datosD.add(dato4);
-        datosD.add(dato5);
-        datosD.add(dato6);
-        datosD.add(dato7);
-        datosD.add(datoi);
+
+        /**/
+        datosD.add(dato); datosD.add(dato2); datosD.add(dato3);datosD.add(dato4); datosD.add(dato5);datosD.add(dato6);
+        datosD.add(dato7); datosD.add(datoi); datosD.add(datoSiguiente);
         return datosD;}
 
     @GetMapping("/menu/4")
-    List borrarEditar(){
+    List menuBorrar(){
         List datosD = new ArrayList<>();
         /**/
         Datos dato = new Datos("########################",false);
@@ -166,15 +165,13 @@ public class Prueba {
         Datos dato6 = new Datos("3. Slice 3 ",false,"");
         Datos dato7 = new Datos("4. Salir ",false,"");
         Datos datoi = new Datos("Ingrese opcion: ",true,"opcion");
+        /*Siguiente Uri*/
+        Uri uriSiguiente = new Uri("/menu","GET");
+        Datos datoSiguiente = new Datos("",false,"",uriSiguiente );
         /**/
-        datosD.add(dato);
-        datosD.add(dato2);
-        datosD.add(dato3);
-        datosD.add(dato4);
-        datosD.add(dato5);
-        datosD.add(dato6);
-        datosD.add(dato7);
-        datosD.add(datoi);
+        datosD.add(dato); datosD.add(dato2); datosD.add(dato3); datosD.add(dato4); datosD.add(dato5);
+        datosD.add(dato6); datosD.add(dato7); datosD.add(datoi); datosD.add(datoSiguiente);
+
         return datosD;}
 
     @GetMapping("/menu/5")
@@ -225,6 +222,26 @@ public class Prueba {
         datosD.add(datoSiguiente);
         /**/
         return datosD;}
+
+    @GetMapping("/menu/editar/{id}")
+    List menuEditarSlice(@PathVariable ("id") Integer id){
+        List datosD = new ArrayList<>();
+        /**/
+        Datos dato = new Datos("########################",false);
+        Datos dato2 = new Datos("#     Editar Slice     #",false);
+        Datos dato3= new Datos("########################",false);
+        Datos dato4 = new Datos("1. Añadir VM ",false,"");
+        Datos dato5 = new Datos("2. Añadir enlace ",false,"");
+        Datos dato6 = new Datos("3. Eliminar VM ",false,"");
+        Datos dato7 = new Datos("4. Editar VM ",false,"");
+        Datos dato8 = new Datos("5. Editar VM ",false,"");
+        Datos datoi = new Datos("Ingrese opcion: ",true,"opcion");
+        /**/
+        datosD.add(dato); datosD.add(dato2); datosD.add(dato3);datosD.add(dato4); datosD.add(dato5);datosD.add(dato6);
+        datosD.add(dato7); datosD.add(dato8);datosD.add(datoi);
+        return datosD;}
+
+
 }
 
 
